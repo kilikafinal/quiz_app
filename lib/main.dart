@@ -21,23 +21,42 @@ class _MyAppState extends State<MyApp> {
   final _questions = const [
     {
       'questionText': 'Whats your favorite color?',
-      'answers': ['Blue', 'Red', 'Green', 'Yellow'],
+      'answers': [
+        {"text": 'Blue', "score": 1},
+        {"text": 'Red', "score": 2},
+        {"text": 'Green', "score": 3},
+        {"text": 'Yellow', "score": 4}
+      ],
     },
     {
       'questionText': 'Whats your favorite number?',
-      'answers': ['One', 'Two', 'Three', 'Four'],
+      'answers': [
+        {"text": 'One', "score": 1},
+        {"text": 'Two', "score": 2},
+        {"text": 'Three', "score": 3},
+        {"text": 'Four', "score": 4}
+      ],
     },
     {
       'questionText': 'Whats your name?',
-      'answers': ['Ken', 'Jimothy', 'Alexander', 'Scooter'],
+      'answers': [
+        {"text": 'Ken', "score": 1},
+        {"text": 'Jimothy', "score": 2},
+        {"text": 'Alexander', "score": 3},
+        {"text": 'Scooter', "score": 4}
+      ],
     },
   ];
 
-  void _answerQuestion() {
+  var _totalScore = 0;
+
+  void _answerQuestion(int score) {
+    _totalScore += score;
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
     print(_questionIndex);
+    print(_totalScore);
   }
 
   @override
